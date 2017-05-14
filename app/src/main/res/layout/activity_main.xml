@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hp.healthcare.MainActivity">"
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/d1"
+        android:scaleType="centerCrop"/>
+    <EditText
+        android:id="@+id/username_text_view"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:hint="USERNAME"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/password_text_view"
+        android:layout_width="300dp"
+        android:textStyle="bold"
+        android:inputType="textPassword"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp"
+        android:layout_below="@id/username_text_view"
+        android:hint="PASSWORD"/>
+
+    <Button
+        android:id="@+id/logIn_button"
+        android:background="#000000"
+        android:textColor="#FFFFFF"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="24dp"
+        android:onClick="logIn"
+        android:layout_below="@id/password_text_view"
+        android:text="log in"
+        />
+
+
+    <Button
+        android:id="@+id/signUp"
+        android:background="#000000"
+        android:textColor="#FFFFFF"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:text="sign up"
+        android:layout_margin="10dp"
+        />
+
+
+    <TextView
+        android:textColor="#484848"
+        android:layout_width="wrap_content"
+        android:textSize="32sp"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account?"
+        android:layout_above="@id/signUp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        />
+
+</RelativeLayout>

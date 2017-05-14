@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/d1"
+        android:scaleType="centerCrop"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <TextView
+        android:fontFamily="serif-monospace"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="health profile"
+        android:textAllCaps="true"
+        android:textSize="32sp"
+        android:padding="8dp"
+        android:background="#42a5f5"
+        android:textColor="#FFFFFF"/>
+
+    <TextView
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="height"
+        android:textAllCaps="true"
+        android:padding="8dp"
+        android:textSize="16sp"
+        android:textColor="#000000"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/height"
+        android:padding="8dp"
+        android:inputType="number"/>
+
+    <TextView
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="weight"
+        android:textAllCaps="true"
+        android:padding="8dp"
+        android:textSize="16sp"
+        android:textColor="#000000"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/weight"
+        android:padding="8dp"
+        android:inputType="number"/>
+
+    <TextView
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="blood group"
+        android:textAllCaps="true"
+        android:padding="8dp"
+        android:textSize="16sp"
+        android:textColor="#000000"/>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="#FFFFFF"
+        />
+
+    <TextView
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="allergic to"
+        android:textAllCaps="true"
+        android:padding="8dp"
+        android:textSize="16sp"
+        android:textColor="#000000"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/allergy"
+        android:padding="8dp"
+        android:inputType="textMultiLine"/>
+
+
+    <Button
+        android:background="#000000"
+        android:textColor="#FFFFFF"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="24dp"
+        android:text="sign in"
+        android:onClick="signin"
+        android:id="@+id/signIn"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Healthcare</string>
+    <string name="desc">h</string>
+
+    <string name="gender_prompt">   </string>
+
+    <string-array name="gender_arrays">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string name="doc">
+        Speciality
+    </string>
+</resources>
