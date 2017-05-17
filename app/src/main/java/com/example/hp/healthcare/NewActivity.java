@@ -97,10 +97,16 @@ import android.widget.Toast;
                 c.setGender(gender);
               //  helper.insertContact(c);
 
-                ProfileActivity p = new ProfileActivity();
-                p.sendInfo(c);
+               /* ProfileActivity p = new ProfileActivity();
+                p.sendInfo(c);*/
 
                 Intent myIntent = new Intent(NewActivity.this, ProfileActivity.class);
+                myIntent.putExtra("name",name);
+                myIntent.putExtra("age",age);
+                myIntent.putExtra("gender",gender);
+                myIntent.putExtra("password",password);
+                myIntent.putExtra("email",email);
+                myIntent.putExtra("contact",contactNo);
                 startActivity(myIntent);
 
             }

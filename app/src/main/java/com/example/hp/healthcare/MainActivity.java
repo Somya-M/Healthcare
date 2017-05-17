@@ -2,6 +2,7 @@ package com.example.hp.healthcare;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -68,8 +69,10 @@ public class MainActivity extends AppCompatActivity {
     {
         DatabaseHelper helper = new DatabaseHelper(this);
         if (view.getId() == R.id.logIn_button) {
-            String pass = helper.searchPass(user);
-            if (password.equals(pass)) {
+            //String pass = helper.searchPass(user);
+            SharedPreferences preferences=getSharedPreferences("Healthcare",Context.MODE_PRIVATE);
+            String pass=preferences.getString("password","");
+            if (password.equalsIgnoreCase(pass)) {
                 Intent I = new Intent(MainActivity.this, DashboardActivity.class);
                 // I.putExtra();
                 startActivity(I);

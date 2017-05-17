@@ -1,22 +1,17 @@
 package com.example.hp.healthcare;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static com.example.hp.healthcare.R.drawable;
-import static com.example.hp.healthcare.R.id;
-import static com.example.hp.healthcare.R.layout;
 
 
 public class DashboardActivity extends Activity implements OnItemSelectedListener{
@@ -24,12 +19,12 @@ public class DashboardActivity extends Activity implements OnItemSelectedListene
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Get the view from new_activity.xml
-        setContentView(layout.dashboard_activity);
+        setContentView(R.layout.dashboard_activity);
 
 
 
         // Spinner element
-        Spinner spinner = (Spinner) findViewById(id.spinner1);
+        Spinner spinner = (Spinner) findViewById(R.id.spinner1);
 
         // Spinner click listener
         spinner.setOnItemSelectedListener(this);
@@ -56,48 +51,41 @@ public class DashboardActivity extends Activity implements OnItemSelectedListene
 
 
 
-        Contact c= new Contact();
+       /* Contact c= new Contact();
 
         TextView user = (TextView) findViewById(id.helloUser);
-        user.setText("Hello" + c.getName());      //add username here
+              //add username here
 
         TextView userAge = (TextView) findViewById(id.userAge);
-        userAge.setText(c.getAge());      //add user age here
+              //add user age here
 
         TextView userGender = (TextView) findViewById(id.userGender);
-        userGender.setText(c.getGender());      //add user gender here
+              //add user gender here
 
         if (userGender.getText().toString() == "Male")
         {
             ImageView imgUser = (ImageView) findViewById(id.img);
-            imgUser.setImageResource(drawable.male);
         }
         else
         {
             ImageView imgUser = (ImageView) findViewById(id.img);
-            imgUser.setImageResource(drawable.female);
         }
 
 
         TextView userContactNo = (TextView) findViewById(id.userContactNo);
-        userContactNo.setText(c.getContact_no());      //add user contact no here
 
         TextView userEmail = (TextView) findViewById(id.userEmail);
-        userEmail.setText(c.getEmail());      //add user email here
 
 
         TextView userHeight = (TextView) findViewById(id.userHeight);
-        userHeight.setText(c.getHeight());      //add user height here
 
 
         TextView userWeight = (TextView) findViewById(id.userWeight);
-        userWeight.setText(c.getWeight());      //add user weight here
 
         TextView userBloodGroup = (TextView) findViewById(id.userBloodGroup);
-        userBloodGroup.setText(c.getBlood_group());      //add user blood group here
 
         TextView userAllegicTo = (TextView) findViewById(id.userAllergicTo);
-        userAllegicTo.setText(c.getAllergic_to());      //add user allergy here
+        */
 
     }
 
@@ -108,6 +96,33 @@ public class DashboardActivity extends Activity implements OnItemSelectedListene
 
         // Showing selected spinner item
         Toast.makeText(parent.getContext(), "Specialist: " + item, Toast.LENGTH_LONG).show();
+
+
+
+        if(item.equalsIgnoreCase("gynaecologist"))
+
+        {
+            Intent intent=new Intent(DashboardActivity.this,gynaecologist.class);
+            startActivity(intent);
+        }
+
+        if(item.equalsIgnoreCase("physician"))
+        {
+            Intent intent=new Intent(DashboardActivity.this,physician.class);
+            startActivity(intent);
+        }
+         if (item.equalsIgnoreCase("ayurvedic"))
+        {
+            Intent intent = new Intent(DashboardActivity.this, ayurvedic.class);
+            startActivity(intent);
+        }
+        if (item.equalsIgnoreCase("pediatrician"))
+        {
+            Intent intent = new Intent(DashboardActivity.this, pediatrician.class);
+            startActivity(intent);
+        }
+
+
     }
     public void onNothingSelected(AdapterView<?> arg0) {
         // TODO Auto-generated method stub

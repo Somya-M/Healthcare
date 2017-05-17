@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 //package com.androidtutorialshub.loginregister.model;
 
@@ -22,16 +23,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // User Table Columns names
 
-    private static final String COLUMN_USER_NAME = "user_name";
-    private static final String COLUMN_USER_EMAIL = "user_email";
-    private static final String COLUMN_USER_PASSWORD = "user_password";
+    private static final String COLUMN_USER_NAME = "username";
+    private static final String COLUMN_USER_EMAIL = "useremail";
+    private static final String COLUMN_USER_PASSWORD = "userpassword";
     private static final String COLUMN_AGE = "age";
     private static final String COLUMN_GENDER = "gender";
-    private static final String COLUMN_CONTACT_NO = "contact_no";
+    private static final String COLUMN_CONTACT_NO = "contactno";
     private static final String COLUMN_HEIGHT = "height";
     private static final String COLUMN_WEIGHT = "weight";
-    private static final String COLUMN_BLODD_GROUP = "blood_group";
-    private static final String COLUMN_ALLERGIC_TO = "allergic_to";
+    private static final String COLUMN_BLODD_GROUP = "bloodgroup";
+    private static final String COLUMN_ALLERGIC_TO = "allergicto";
     // create table sql query
     private String CREATE_USER_TABLE = "CREATE TABLE " + TABLE_USER + "("
             + COLUMN_USER_NAME + " TEXT,"
@@ -75,7 +76,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-
+        Log.e("track","inside insertcontact");
         values.put(COLUMN_USER_NAME, c.getName());
         values.put(COLUMN_USER_EMAIL, c.getEmail());
         values.put(COLUMN_USER_PASSWORD, c.getPassword());
@@ -88,6 +89,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_ALLERGIC_TO, c.getAllergic_to());
         // Inserting Row
         db.insert(TABLE_USER, null, values);
+            Log.e("track","after inserting data");
         db.close();
     }
 
@@ -100,19 +102,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public String searchPass(String uname)
 
     {
-        db = this.getReadableDatabase();
-        String query = "select user_name, password from" + TABLE_USER;
-        Cursor cursor = db.rawQuery(query, null);
-
+        Log.e("track","inside method");
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from "+TABLE_USER,null);
+        Log.e("track","after querry");
         String a, b;
         b = "Not Found";
 
         if (cursor.moveToFirst()) {
-            do {
-                a = cursor.getString(0);//user_name
 
-                if (a.equals(uname)) {
-                    b = cursor.getString(1);//password
+            do {
+                Log.e("track","here");
+                a = cursor.getString(0);//user_name
+                Log.e("track","after user name");
+                if (a.equalsIgnoreCase(uname)) {
+                    b = cursor.getString(2);//password
+                    Log.e("track","after password");
                     break;
                 }
 

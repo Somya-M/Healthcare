@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
     <ImageView
         android:id ="@+id/img"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:src="@drawable/male"
+        android:src="@drawable/male11"
         android:scaleType="centerCrop"/>
 
     <TextView
         android:id="@+id/helloUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:text="
+         HELLO USER!"
+        android:textStyle="bold"
+        android:textSize="16sp"
         android:padding="16dp"
         />
 
@@ -23,16 +32,19 @@
         android:id="@+id/userAge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:padding="16dp"
-        />
-
+        android:padding="18dp"
+        android:textStyle="italic"
+      android:text="You are now logged in.
+Look for the specialists in the below mentioned list.."
+/>
     <TextView
         android:id="@+id/userGender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:padding="16dp"
+        android:text="                         GET WELL SOON!"
+        android:textStyle="bold"
+        android:textSize="16sp"
         />
 
 
@@ -40,7 +52,6 @@
         android:id="@+id/userContactNo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:padding="16dp"
         />
 
@@ -48,7 +59,6 @@
         android:id="@+id/userEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:padding="16dp"
         />
 
@@ -56,7 +66,6 @@
         android:id="@+id/userHeight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:padding="16dp"
         />
 
@@ -64,7 +73,6 @@
         android:id="@+id/userWeight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:padding="16dp"
         />
 
@@ -72,7 +80,6 @@
         android:id="@+id/userBloodGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:padding="16dp"
         />
 
@@ -81,9 +88,9 @@
         android:id="@+id/userAllergicTo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:padding="16dp"
         />
+    </LinearLayout>
 
     <Spinner
         android:layout_width="300dp"
@@ -91,7 +98,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/spinner1"
         android:background="#FFFFFF"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="24dp"
         />
 
-
-</LinearLayout>
+</RelativeLayout>
