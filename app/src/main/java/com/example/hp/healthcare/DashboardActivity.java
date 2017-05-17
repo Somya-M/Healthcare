@@ -106,24 +106,30 @@ public class DashboardActivity extends Activity implements OnItemSelectedListene
             startActivity(intent);
         }
 
-        if(item.equalsIgnoreCase("physician"))
+        else if(item.equalsIgnoreCase("physician"))
         {
             Intent intent=new Intent(DashboardActivity.this,physician.class);
             startActivity(intent);
         }
-         if (item.equalsIgnoreCase("ayurvedic"))
+        else if (item.equalsIgnoreCase("ayurvedic"))
         {
             Intent intent = new Intent(DashboardActivity.this, ayurvedic.class);
             startActivity(intent);
         }
-        if (item.equalsIgnoreCase("pediatrician"))
+        else if (item.equalsIgnoreCase("pediatrician"))
         {
             Intent intent = new Intent(DashboardActivity.this, pediatrician.class);
             startActivity(intent);
         }
-
+        else if (item.equalsIgnoreCase("dentist"))
+        {
+            Intent intent = new Intent(DashboardActivity.this, dentist.class);
+            startActivity(intent);
+        }
+        else{}
 
     }
+
     public void onNothingSelected(AdapterView<?> arg0) {
         // TODO Auto-generated method stub
     }
